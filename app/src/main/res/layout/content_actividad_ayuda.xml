@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    tools:context="com.example.wenceslao.gestionempresa.ActividadAyuda2"
+    tools:showIn="@layout/actividad_ayuda"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_entrada"
+        android:text="@string/txt_entrada"
+        android:layout_marginTop="50dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RadioGroup
+            android:id="@+id/idioma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <RadioButton
+                android:id="@+id/español"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/español" />
+
+            <RadioButton
+                android:id="@+id/ingles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
+                android:checked="false"
+                android:text="@string/ingles" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ayuda1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sobre_app"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ayuda2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/software"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/ayuda3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manuales"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:layout_centerHorizontal="true" />
+</LinearLayout>

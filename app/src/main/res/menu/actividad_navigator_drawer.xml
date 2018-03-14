@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/msn2">
+            <menu>
+                <item
+                    android:id="@+id/nav_servicios"
+                    android:icon="@mipmap/ic_servicios"
+                    android:title="@string/servicios" />
+                <item
+                    android:id="@+id/nav_clientes"
+                    android:icon="@drawable/ic_cliente"
+                    android:title="@string/cliente" />
+                <item
+                    android:id="@+id/nav_empleados"
+                    android:icon="@drawable/ic_empleado"
+                    android:title="@string/empleado" />
+                <item
+                    android:id="@+id/nav_addcita"
+                    android:icon="@mipmap/ic_addcita"
+                    android:title="@string/addcita" />
+                <item
+                    android:id="@+id/nav_consulta"
+                    android:icon="@drawable/ic_consulta1"
+                    android:title="Consultas" />
+                <item
+                    android:id="@+id/nav_contacto"
+                    android:icon="@mipmap/ic_contacto"
+                    android:title="@string/contacto" />
+                <item
+                    android:id="@+id/nav_ayuda"
+                    android:icon="@mipmap/ic_ayuda"
+                    android:title="@string/ayuda" />
+                <item
+                    android:id="@+id/nav_cierre"
+                    android:icon="@mipmap/ic_salir"
+                    android:title="@string/salir" />
+                </menu>
+        </item>
+
+    </group>
+</menu>

@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.wenceslao.gestionempresa.ActividadPrincipal">
+    <item
+        android:id="@+id/action_spain"
+        android:icon="@mipmap/ic_spain"
+        android:title="@string/español"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_english"
+        android:icon="@mipmap/ic_english"
+        android:title="@string/ingles"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@mipmap/ic_ayuda"
+        android:title="@string/ayuda"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_quit"
+        android:icon="@mipmap/ic_salir"
+        android:title="@string/salir"
+        app:showAsAction="ifRoom" />
+</menu>

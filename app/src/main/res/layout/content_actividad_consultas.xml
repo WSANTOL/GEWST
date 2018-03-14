@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:paddingTop="16dp"
+              android:orientation="vertical"
+    tools:context="com.example.wenceslao.gestionempresa.ActividadContacto"
+    tools:showIn="@layout/actividad_contacto">
+
+    <TextView
+        android:id="@+id/txtOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Seleccione a continuacion la consulta que quiere realizar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button_consulta_cita_fecha"
+        android:text="CONSULTA CITA POR FECHA"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button_consulta_citas_empleado"
+        android:text="CONSULTA CITAS POR EMPLEADO"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button_consulta_citas_usuario"
+        android:text="CONSULTA CITAS POR CLIENTE"/>
+
+
+
+
+</LinearLayout>

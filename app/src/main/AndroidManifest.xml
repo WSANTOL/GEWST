@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.wenceslao.gestionempresa">
+
+    <!-- Para autocompletar el campo de texto email en el formulario de login con los email de los usuarios -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!-- Para poder escribir en memoria externa -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ActividadPrincipal"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActividadRegistro"
+            android:label="@string/title_activity_actividad_registro"
+            android:parentActivityName=".ActividadPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadPrincipal"/>
+        </activity>
+        <activity
+            android:name=".ActividadLogin"
+            android:label="@string/title_activity_login"
+            android:parentActivityName=".ActividadPrincipal"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadPrincipal"/>
+        </activity>
+        <activity
+            android:name=".ActividadNavigator"
+            android:label="@string/title_activity_actividad_navigator"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ActividadAyuda"
+            android:label="@string/title_activity_help"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ActividadAyuda2"
+            android:label="@string/title_activity_help"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <provider
+            android:name=".proveedor.ProveedorDeContenido"
+            android:authorities="com.example.wenceslao.gestionempresa.proveedor.ProveedorDeContenido"
+            android:enabled="true"
+            android:exported="true"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.wenceslao.gestionempresa.ActividadPrincipal"
+    tools:showIn="@layout/actividad_principal"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_inicio"
+        android:layout_above="@+id/txtBienvenida"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/txtBienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnInicio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:text="@string/bienvenida"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnRegistro"
+        android:layout_alignBottom="@+id/btnRegistro"
+        android:layout_alignLeft="@+id/txtBienvenida"
+        android:layout_alignStart="@+id/txtBienvenida"
+        android:elevation="0dp"
+        android:text="@string/inicio"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:backgroundTint="@color/colorPrimary"
+        tools:ignore="MissingPrefix"/>
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/registro"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtBienvenida"
+        android:layout_alignEnd="@+id/txtBienvenida"
+        android:layout_marginBottom="33dp" />
+
+</RelativeLayout>

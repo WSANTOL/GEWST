@@ -1,0 +1,278 @@
+<resources>
+    <string name="app_name">Gestion WST</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Actividad principal-->
+    <string name="bienvenida">Aplicacion para la Gestion de Citas de Empresas</string>
+    <string name="info">
+        <![CDATA[
+        <p>Bienvenido a la aplicacion para la gestion de Citas de Empresa</p>
+        <p>Esta aplicación le permitirá gestionar su agenda de citas de forma cómoda y fácil<p>
+        <p>Consulte la seccion de ayuda para más información<p>
+        ]]>
+    </string>
+    <string name="inicio">INICIO</string>
+    <string name="registro">REGISTRO</string>
+    <string name="español">Español</string>
+    <string name="ingles">Ingles</string>
+    <string name="español2">Spanish</string>
+    <string name="ingles2">English</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="salir">Salir</string>
+
+    <string name="title_actividad_registro">Registro</string>
+
+    <string name="error_campo_obligatorio">Error: Campo Obligatorio</string>
+    <string name="error_campo_largo">Error: Campo Demasiado Largo. Debe ser inferior a 20 caracteres</string>
+
+    <string name="mensaje1">Los datos se han validado correctamente</string>
+    <string name="mensaje2">Es preciso registrarse</string>
+
+    <!--Actividad registro datos-->
+    <string name="nombreEmpresa">Nombre de Empresa</string>
+    <string name="telefono">Telefono de Empresa</string>
+    <string name="nombreAdministrador">Nombre de Administrador</string>
+    <string name="apellidosAdministrador">Apellidos de Administrador</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="pequeña">Pequeña(1-25)</string>
+    <string name="mediana">Mediana(26-50)</string>
+    <string name="sector1">Sector Primario</string>
+    <string name="sector2">Sector Secundario</string>
+    <string name="sector3">Sector Terciario</string>
+    <string name="registrar">REGISTRAR</string>
+    <string name="validar">VALIDAR</string>
+    <string name="mensaje3">Ha seleccionado </string>
+
+    <string name="error_longitudtlf">Error: El telefono debe tener  9 dígitos</string>
+    <string name="error_email">Error: Campo Demasiado Largo. Debe ser inferior a 30 caracteres</string>
+    <string name="error_password">Error: la contraseña debe tener entre 6 y 20 caracteres</string>
+    <string name="error_fecha">Error: el dato de fecha/hora es invalido. Pruebe otra vez</string>
+    <string name="error_codigo">Error: el codigo del cliente o empleado es invalido. Pruebe otra vez</string>
+    <string name="title_activity_actividad_navigator">Inicio</string>
+
+    <string name="navigation_drawer_open">Apertura del menu de navegación</string>
+    <string name="navigation_drawer_close">Cierre de menu de navegacion</string>
+    <string name="title_actividad_servicios">Servicios</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_actividad_add_cita">Añadir Cita</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_actividad_login">Acceso</string>
+
+    <!-- Actividad Login -->
+    <string name="prompt_email">Correo Electronico</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">ACCESO</string>
+    <string name="action_sign_in_short">Registro</string>
+    <string name="error_invalid_email">La direccion de correo es inválida</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">La contraseña es incorrecta</string>
+    <string name="error_field_required">Este campo es obligatorio</string>
+    <string name="permission_rationale">"Son necesarios los permisos de los contactos para proveer correos electronicos"</string>
+    <string name="action_cancel">CANCELAR</string>
+
+
+    <string name="title_activity_help">Ayuda</string>
+    <string name="title_activity_login">Acceso</string>
+
+
+    <!--menu navegacion-->
+    <string name="servicios">Servicios</string>
+    <string name="addcita">Citas</string>
+    <string name="contacto">Contacto</string>
+
+    <string name="msn">Gestión de Citas</string>
+    <string name="msn2">Opciones</string>
+
+    <string name="saludo">Bienvenid@ a tu perfil</string>
+
+
+    <string name="cortes_pelo">
+        <![CDATA[
+        <p>CORTE PELO SEÑORA        5,00 EUROS</p>
+        <p>CORTE PELO CABALLERO     5,00 EUROS<p>
+        <p>CORTE DE FLECOS          2,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="peinado">
+        <![CDATA[
+        <p>PEINAR PELO CORTO        6,00 EUROS</p>
+        <p>PEINAR PELO MEDIO        8,00 EUROS<p>
+        <p>PEINAR PELO LARGO       10,00 EUROS<p>
+        <p>DESRIZADO CABALLERO     15,00 EUROS<p>
+        <p>PEINAR PELO AFRO        +5,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="tintes">
+        <![CDATA[
+        <p>TINTE                   10,00 EUROS</p>
+        <p>CAMBIO DE COLOR         15,00 EUROS<p>
+        <p>MECHAS                  25,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="estetica">
+        <![CDATA[
+        <p>CEJAS                    3,00 EUROS</p>
+        <p>LABIO SUPERIOR           2,00 EUROS<p>
+        <p>MANICURA                 6,00 EUROS<p>
+        <p>PEDICURA                10,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="cierre_app">Se va a proceder a cerrar la aplicación/Verifique si hay tareas ejecutandose</string>
+    <string name="title_activity_actividad_contacto">Contacto</string>
+
+    <string name="titulo2">Contacto</string>
+    <string name="info2">
+        <![CDATA[
+        <br>Puedes dejarnos tu consulta, duda, sugerencia o pregunta.<br>
+        <br>Rellena este formulario y en breve recibirás respuesta de nuestro equipo de profesionales<br>
+        ]]>
+    </string>
+    <string name="nombre_completo">Nombre y Apellidos</string>
+    <string name="email_contacto">Correo Electronico</string>
+    <string name="telefono_contacto">Telefono</string>
+    <string name="mensaje_contacto">Mensaje</string>
+    <string name="titulo3">Acepto(*)</string>
+    <string name="politica">Politica de Privacidad</string>
+    <string name="enviar">Enviar</string>
+
+    <string name="error_nombre">Sólo se permiten 40 caracteres alfabéticos y espacios</string>
+    <string name="error_nombre_2">Sólo se permiten 20 caracteres alfabéticos y espacios</string>
+
+    <string name="mensaje4">Su mensaje ha sido enviado. Gracias!</string>
+    <string name="mensaje5">Su cita ha sido registrada. Gracias!</string>
+    <string name="mensaje6">Sus datos se han registrado correctamente. En breve será redirigido a la página principal</string>
+    <string name="fecha">Fecha</string>
+    <string name="añadir">Añadir Cita</string>
+
+    <string name="pick_date">Pick Date</string>
+    <string name="init_text">Neurobin Date Picker Example</string>
+
+
+    <string name="sobre_app">
+        <![CDATA[
+        <br>Agenda diaria de trabajo</br>
+        <br>Acceda a su agenda diaria de trabajo y a la de cada uno de sus
+        empleados desde su teléfono móvil.<br>Tenga los datos de su
+        empresa a la mano y esté al tanto de lo que sucede, disponiendo
+        de una aplicación que se sincroniza y actualiza automáticamente.</br>
+        <br>Agenda diaria equipo de trabajo</br>
+        <br>Esté al tanto desde cualquier lugar y en todo momento de la
+        agenda diaria de trabajo de sus empleados y compañeros </br>
+        ]]>
+    </string>
+
+    <string name="software">
+        <![CDATA[
+        <br> La aplicación ha sido diseñada para smartphones y tablets.
+        Que tengan SDK mínima API 16: Android 4.1. (Jelly Bean)
+        Los niveles inferiores de API apuntan a más dispositivos,
+        pero tienen menos funciones disponibles.</br>
+        <br>Al orientar la API 16 y más adelante, la aplicación ejecutará
+        aproximadamente el 99,2% de los dispositivos que están activos
+        en The Google Play Store</br>
+        ]]>
+    </string>
+
+    <string name="manuales">
+        <![CDATA[
+        <p> En breve dispondremos de esta sección debidamente actualizada</p>
+        <p> Disculpen las molestias.</p>
+        ]]>
+    </string>
+
+    <string name="servicio1">CORTE</string>
+    <string name="servicio2">PEINADO</string>
+    <string name="servicio3">TINTE</string>
+    <string name="servicio4">ESTETICA</string>
+
+    <string name="ayuda1">SOBRE LA APP</string>
+    <string name="ayuda2">REQUISITOS SOFTWARE</string>
+    <string name="ayuda3">MANUALES/TUTORIALES</string>
+
+    <string name="title_activity_actividad_registro">Registro</string>
+    <string name="title_activity_actividad_servicios">Servicios</string>
+
+    <string name="cliente">Clientes</string>
+    <string name="empleado">Empleados</string>
+
+    <string name="sin_datos">Sin datos.</string>
+
+    <string name="progress_cargando_datos">Cargando datos&#8230;</string>
+
+    <string name="cliente_nombre">Nombre</string>
+    <string name="cliente_apellido">Apellidos</string>
+    <string name="cliente_email">Correo Electronico</string>
+    <string name="cliente_telefono">Telefono</string>
+
+    <string name="empleado_nombre">Nombre</string>
+    <string name="empleado_formacion">Formacion</string>
+    <string name="empleado_email">Correo Electronico</string>
+    <string name="empleado_telefono">Telefono</string>
+
+    <string name="cita_dia">Dia</string>
+    <string name="cita_mes">Mes</string>
+    <string name="cita_anho">Año</string>
+    <string name="cita_hora">Hora</string>
+    <string name="cita_minuto">Minuto</string>
+    <string name="cita_servicio">Servicio</string>
+    <string name="cita_cliente">Codigo Cliente</string>
+    <string name="cita_empleado">Codigo Empleado</string>
+
+    <string name="tabla_cliente">CLIENTE</string>
+    <string name="tabla_empleado">EMPLEADO</string>
+    <string name="tabla_cita">CITA</string>
+
+    <string name="tam_pequena">Has seleccionado pequeña empresa (1-25) </string>
+    <string name="tam_mediana">Has seleccionado mediana empresa (26-50) </string>
+    <string name="selec_sector1">Has seleccionado Sector 1 </string>
+    <string name="selec_sector2">Has seleccionado Sector 2 </string>
+    <string name="selec_sector3">Has seleccionado Sector 3 </string>
+    <string name="selec_politica">Has aceptado la politica de privacidad </string>
+
+    <string name="txt_entrada">Seleccione el idioma en que quiere obtener la ayuda: </string>
+    <string name="txt_entrada2">Please, select the language you prefer consulting the help section: </string>
+
+    <string name="sobre_app_en">
+        <![CDATA[
+            <br>  Daily work schedule </br>
+            <br> Access your daily work schedule and your
+            employees daily work schedule from your mobile phone. Have your
+            company data on hand and be aware of what happens, through
+            an application that is synchronized automatically. </ br>
+            <br>  Daily work team agenda </br>
+            <br> You can arrange of the work schedule
+            of your employees and workmates anytime, anywhere </ br>
+        ]]>
+    </string>
+
+
+    <string name="software_en">
+        <![CDATA[
+        <br> The application is designed for smartphones and tablets that
+        have a minimum SDK API 16: Android 4.1. (Jelly Bean)
+        Lower API levels target more devices,
+        but fewer features available.</br>
+        <br>By targeting API 16 and later you will get
+        approximately 99.2% of the devices that are active
+        on The Google Play Store</br>
+        ]]>
+    </string>
+
+    <string name="manuales_en">
+        <![CDATA[
+        <p> We will soon have this section duly updated</p>
+        <p> Sorry for the inconvenience</p>
+        ]]>
+    </string>
+
+    <string name="consulta1">Consulta citas por dia</string>
+
+
+</resources>

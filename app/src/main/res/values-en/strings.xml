@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestion WST</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Actividad principal-->
+    <string name="bienvenida">Aplication for the management of Company Appointments</string>
+    <string name="info">
+        <![CDATA[
+        <p>Welcome to the application for the management of company appointments</p>
+        <p>This application will allow you to manage your appointment book in a comfortable and easy way<p>
+        <p>Check the help section for more information.<p>
+        ]]>
+    </string>
+    <string name="inicio">START</string>
+    <string name="registro">SIGN IN</string>
+    <string name="español">Spanish</string>
+    <string name="ingles">English</string>
+    <string name="ayuda">Help</string>
+    <string name="salir">Exit</string>
+
+    <string name="title_actividad_registro">Register</string>
+
+
+    <string name="error_campo_obligatorio">Error: Required Field</string>
+    <string name="error_campo_largo">Error: Field Too Long. Must be less than 20 characters</string>
+
+    <string name="mensaje1">Data has been correctly validated</string>
+    <string name="mensaje2">You must register your data</string>
+
+
+    <!--Actividad registro datos-->
+    <string name="nombreEmpresa">Company Name</string>
+    <string name="telefono">Company Phone</string>
+    <string name="nombreAdministrador">Manager Name</string>
+    <string name="apellidosAdministrador">Manager Surname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="pequeña">Small(1-25)</string>
+    <string name="mediana">Medium(26-50)</string>
+    <string name="sector1">Primary Sector</string>
+    <string name="sector2">Secondary Sector</string>
+    <string name="sector3">Third Sector</string>
+    <string name="registrar">RECORD</string>
+    <string name="validar">VALIDATE</string>
+    <string name="mensaje3">You have selected  </string>
+
+    <string name="error_longitudtlf">Error: The phone must have  9 digits</string>
+    <string name="error_email">Error: Field Too Long. Must be less than 30 characters</string>
+    <string name="error_password">Error: Password must be between 6 and 20 characters</string>
+
+    <string name="title_activity_actividad_navigator">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_actividad_servicios">Services</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_actividad_add_cita">Add Appointment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_actividad_login">Access</string>
+
+    <!-- Actividad Login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">SIGN IN</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="action_cancel">CANCEL</string>
+
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_login">Access</string>
+
+    <!--menu navegacion-->
+    <string name="servicios">Services</string>
+    <string name="addcita">Appointments</string>
+    <string name="contacto">Contact</string>
+
+    <string name="msn">Dating Management</string>
+    <string name="msn2">Options</string>
+
+    <string name="saludo">Welcome to my profile</string>
+
+
+    <string name="cortes_pelo">
+        <![CDATA[
+        <p>LADY HAIRCUT             5,00 EUROS</p>
+        <p>GENTLEMAN HAIRCUT        5,00 EUROS<p>
+        <p>BANGS CUT                2,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="peinado">
+        <![CDATA[
+        <p>SHORT HAIRSTYLE             6,00 EUROS</p>
+        <p>MEDIUM HAIRSTYLE            8,00 EUROS<p>
+        <p>LONG HAIRSTYLE             10,00 EUROS<p>
+        <p>GENTLEMAN STRAIGHTENED     15,00 EUROS<p>
+        <p>AFRO STYLE                 +5,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="tintes">
+        <![CDATA[
+        <p>DYE                    10,00 EUROS</p>
+        <p>COLOR CHANGE           15,00 EUROS<p>
+        <p>WICKS                  25,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="estetica">
+        <![CDATA[
+        <p>EYEBROWS                    3,00 EUROS</p>
+        <p>SUPERIOR LIP                2,00 EUROS<p>
+        <p>MANICURE                    6,00 EUROS<p>
+        <p>PEDICURE                   10,00 EUROS<p>
+        ]]>
+    </string>
+
+    <string name="cierre_app">The application will be closed.Check for running tasks</string>
+    <string name="title_activity_actividad_contacto">Contact</string>
+
+    <string name="titulo2">Contact us</string>
+    <string name="info2">
+        <![CDATA[
+        <br>Leave us your query, doubt, suggestion or question.<br>
+        <br>Fill out this form and you will receive a response from our team of professionals shortly.<br>
+        ]]>
+    </string>
+    <string name="nombre_completo">Name and Surname</string>
+    <string name="email_contacto">Email</string>
+    <string name="telefono_contacto">Phone</string>
+    <string name="mensaje_contacto">Message</string>
+    <string name="titulo3">I agree(*)</string>
+    <string name="politica">Privacy Policy</string>
+    <string name="enviar">Send</string>
+
+    <string name="error_nombre">Only 40 alphabetic characters and spaces are allowed</string>
+    <string name="error_nombre_2">Only 20 alphabetic characters and spaces are allowed</string>
+    <string name="mensaje4">Your message has been sent. Thank you!</string>
+    <string name="mensaje5">Your appointment has been recorded. Thank you!</string>
+    <string name="mensaje6">Your data has been successfully registered. You will soon be redirected to the main page</string>
+    <string name="fecha">Date</string>
+    <string name="añadir">Add Appointment</string>
+
+    <string name="pick_date">Pick Date</string>
+    <string name="init_text">Neurobin Date Picker Example</string>
+
+    <string name="sobre_app">
+        <![CDATA[
+            <p>  Daily work schedule </ p>
+            <br> Access your daily work schedule and your
+            employees daily work schedule from your mobile phone. Have your
+            company data on hand and be aware of what happens, through
+            an application that is synchronized automatically. </ br>
+
+            <p>  Daily work team agenda </ p>
+            <br> You can arrange of the work schedule
+            of your employees and workmates anytime, anywhere </ br>
+        ]]>
+    </string>
+
+
+    <string name="software">
+        <![CDATA[
+        <br> The application is designed for smartphones and tablets that
+        have a minimum SDK API 16: Android 4.1. (Jelly Bean)
+        Lower API levels target more devices,
+        but fewer features available.</br>
+        <p>-----------------------------------------------------------</p>
+        <br>By targeting API 16 and later you will get
+        approximately 99.2% of the devices that are active
+        on The Google Play Store</br>
+        ]]>
+    </string>
+
+    <string name="manuales">
+        <![CDATA[
+        <p> We will soon have this section duly updated</p>
+        <p> Sorry for the inconvenience</p>
+        ]]>
+    </string>
+
+    <string name="servicio1">HAIRCUT</string>
+    <string name="servicio2">HAIRSTYLE</string>
+    <string name="servicio3">DYE</string>
+    <string name="servicio4">ESTHETICS</string>
+
+    <string name="ayuda1">ABOUT THIS APP</string>
+    <string name="ayuda2">SOFTWARE REQUIREMENTS</string>
+    <string name="ayuda3">HANDBOOKS/TUTORIALS</string>
+
+    <string name="title_activity_actividad_registro">Registro</string>
+    <string name="title_activity_actividad_servicios">Servicios</string>
+
+    <string name="cliente">Customers</string>
+    <string name="empleado">Employees</string>
+
+    <string name="sin_datos">Without data</string>
+
+    <string name="progress_cargando_datos">Loading data&#8230;</string>
+
+    <string name="cliente_nombre">Name</string>
+    <string name="cliente_apellido">Surname</string>
+    <string name="cliente_email">Email</string>
+    <string name="cliente_telefono">Phone</string>
+
+    <string name="empleado_nombre">Name</string>
+    <string name="empleado_formacion">Studies</string>
+    <string name="empleado_email">Email</string>
+    <string name="empleado_telefono">Phone</string>
+
+    <string name="cita_dia">Day</string>
+    <string name="cita_mes">Month</string>
+    <string name="cita_anho">Year</string>
+    <string name="cita_hora">Hour</string>
+    <string name="cita_minuto">Minute</string>
+    <string name="cita_servicio">Service</string>
+    <string name="cita_cliente">Customer Code</string>
+    <string name="cita_empleado">Employee Code</string>
+    <string name="error_fecha">Error: the date / time data is invalid. Try again</string>
+    <string name="error_codigo">Error: the customer/employee code is invalid. Try again</string>
+
+    <string name="tabla_cliente">CUSTOMERS</string>
+    <string name="tabla_empleado">EMPLOYEES</string>
+    <string name="tabla_cita">APPOINTMENTS</string>
+
+    <string name="tam_pequena">You have selected small company (1-25) </string>
+    <string name="tam_mediana">You have selected medium company  (26-50) </string>
+    <string name="selec_sector1">You have selected Sector 1  </string>
+    <string name="selec_sector2">You have selected Sector 1 </string>
+    <string name="selec_sector3">You have selected Sector 1 </string>
+    <string name="selec_politica">You have accepted the privacy policy</string>
+
+    <string name="txt_entrada">Please, select the language you prefer consulting the help section: </string>
+
+    <string name="consulta1">Check appointments by day</string>
+</resources>
