@@ -54,6 +54,17 @@ public class ActividadNavigator extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Elige la opción adecuada/Choose the right option", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+        */
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -63,7 +74,55 @@ public class ActividadNavigator extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        /*
+        Button btnAdd = (Button) findViewById(R.id.btnAdd);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), ActividadCita.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView txtInfo=(TextView) findViewById(R.id.txtInfo);
+        txtInfo.setText(Html.fromHtml(getString(R.string.info)));
+        */
+
 /*
+        ImageButton cliente=(ImageButton) findViewById( R.id.imageCliente );
+        cliente.
+        cliente.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ActividadCliente.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton empleado=(ImageButton) findViewById( R.id.imageEmpleado );
+        empleado.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ActividadEmpleado.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton cita=(ImageButton) findViewById( R.id.imageCita );
+        cita.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ActividadCita.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+         */
 
         mSectionsPagerAdapter = new ActividadNavigator.SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -73,14 +132,11 @@ public class ActividadNavigator extends AppCompatActivity
 
         TabLayout tabLayoutHome=(TabLayout) findViewById(R.id.tabs_home);
         tabLayoutHome.setupWithViewPager(mViewPager);
-        */
     }
-
 
     /**
      * A placeholder fragment containing a simple view.
      */
-
     public static class PlaceholderFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
@@ -209,7 +265,7 @@ public class ActividadNavigator extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         //getMenuInflater().inflate(R.menu.actividad_navigator_drawer, menu);
-        getMenuInflater().inflate(R.menu.menu_actividad_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_actividad_navigator, menu);
         return true;
     }
 
@@ -235,6 +291,18 @@ public class ActividadNavigator extends AppCompatActivity
                 intent1.addCategory(Intent.CATEGORY_HOME);
                 intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent1);
+                break;
+            case R.id.action_nuevo_cliente:
+                Intent intent2=new Intent(ActividadNavigator.this,ClienteInsertarActivity2.class);
+                startActivity(intent2);
+                break;
+            case R.id.action_nuevo_empleado:
+                Intent intent3=new Intent(ActividadNavigator.this,EmpleadoInsertarActivity2.class);
+                startActivity(intent3);
+                break;
+            case R.id.action_nueva_cita:
+                Intent intent4=new Intent(ActividadNavigator.this,CitaInsertarActivity2.class);
+                startActivity(intent4);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -281,7 +349,8 @@ public class ActividadNavigator extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_addcita) {
-
+            Intent intent=new Intent(ActividadNavigator.this,ActividadCita.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_contacto) {
             Intent intent=new Intent(getApplicationContext(),ActividadContacto.class);
@@ -300,13 +369,16 @@ public class ActividadNavigator extends AppCompatActivity
             intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent1);
         }else if (id == R.id.nav_clientes) {
-
+            Intent intent=new Intent(ActividadNavigator.this,ActividadCliente.class);
+            startActivity(intent);
 
         }else if (id == R.id.nav_empleados) {
-
+            Intent intent=new Intent(ActividadNavigator.this,ActividadEmpleado.class);
+            startActivity(intent);
 
         }else if (id == R.id.nav_consulta) {
-
+            Intent intent = new Intent( ActividadNavigator.this, ActividadConsultas.class );
+            startActivity( intent );
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
