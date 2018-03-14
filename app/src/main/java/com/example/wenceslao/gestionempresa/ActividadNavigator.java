@@ -25,6 +25,15 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.wenceslao.gestionempresa.cita.*;
+import com.example.wenceslao.gestionempresa.cita.CitaListFragment2;
+import com.example.wenceslao.gestionempresa.cliente.ActividadCliente;
+import com.example.wenceslao.gestionempresa.cliente.ClienteInsertarActivity2;
+import com.example.wenceslao.gestionempresa.cliente.ClienteListFragment2;
+import com.example.wenceslao.gestionempresa.empleado.ActividadEmpleado;
+import com.example.wenceslao.gestionempresa.empleado.EmpleadoInsertarActivity2;
+import com.example.wenceslao.gestionempresa.empleado.EmpleadoListFragment2;
+
 
 import java.util.Locale;
 
@@ -36,7 +45,7 @@ public class ActividadNavigator extends AppCompatActivity
 
     private FragmentTabHost tabHost;
     private ViewPager mViewPager;
-
+    private ActividadNavigator.SectionsPagerAdapter mSectionsPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +63,137 @@ public class ActividadNavigator extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+/*
+
+        mSectionsPagerAdapter = new ActividadNavigator.SectionsPagerAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        TabLayout tabLayoutHome=(TabLayout) findViewById(R.id.tabs_home);
+        tabLayoutHome.setupWithViewPager(mViewPager);
+        */
     }
 
 
+    /**
+     * A placeholder fragment containing a simple view.
+     */
 
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public PlaceholderFragment() {
+        }
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static ActividadNavigator.PlaceholderFragment newInstance(int sectionNumber) {
+            ActividadNavigator.PlaceholderFragment fragment = new ActividadNavigator.PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate( savedInstanceState );
+
+
+        }
+
+
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+
+            View rootView =null;
+
+            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+                case 1:
+                    rootView = inflater.inflate(R.layout.actividad_cliente2, container, false);
+
+                    ClienteListFragment2 cliente=new ClienteListFragment2();
+
+                    FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                    transaction.add(R.id.fragment_cliente2, cliente);
+                    transaction.commit();
+                    break;
+
+                case 2:
+                    rootView = inflater.inflate(R.layout.actividad_empleado2, container, false);
+
+                    EmpleadoListFragment2 empleado=new EmpleadoListFragment2();
+
+                    FragmentTransaction transaction1 = getFragmentManager().beginTransaction();
+                    transaction1.add(R.id.fragment_empleado2, empleado);
+                    transaction1.commit();
+                    break;
+
+                case 3:
+                    rootView = inflater.inflate(R.layout.actividad_cita2, container, false);
+
+                    CitaListFragment2 cita=new CitaListFragment2();
+
+                    FragmentTransaction transaction2 = getFragmentManager().beginTransaction();
+                    transaction2.add(R.id.fragment_cita2, cita);
+                    transaction2.commit();
+                    break;
+
+
+            }
+
+            return rootView;
+        }
+
+
+    }
+
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            return ActividadNavigator.PlaceholderFragment.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount() {
+
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return getString(R.string.tabla_cliente) ;
+                case 1:
+                    return getString(R.string.tabla_empleado) ;
+                case 2:
+                    return getString(R.string.tabla_cita) ;
+            }
+            return null;
+        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -141,17 +277,20 @@ public class ActividadNavigator extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_servicios) {
-
+            Intent intent=new Intent(getApplicationContext(),ActividadServicios.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_addcita) {
 
 
         } else if (id == R.id.nav_contacto) {
-
+            Intent intent=new Intent(getApplicationContext(),ActividadContacto.class);
+            startActivity(intent);
 
 
         } else if (id == R.id.nav_ayuda) {
-
+            Intent intent=new Intent(getApplicationContext(),ActividadAyuda2.class);
+            startActivity(intent);
 
         }else if (id == R.id.nav_cierre) {
             Toast.makeText(getApplicationContext(),R.string.cierre_app,Toast.LENGTH_SHORT).show();

@@ -13,6 +13,7 @@ import android.widget.SimpleCursorAdapter;
 import com.example.wenceslao.gestionempresa.R;
 import com.example.wenceslao.gestionempresa.proveedor.CitaProveedor;
 import com.example.wenceslao.gestionempresa.proveedor.ContratoCita;
+import com.example.wenceslao.gestionempresa.proveedor.ProveedorDeContenido;
 
 import java.util.regex.Pattern;
 
@@ -33,21 +34,21 @@ public class CitaConsulta4 extends AppCompatActivity {
             ContratoCita.Cita.COD_EMPLEADO
     };
 
-    int[] mListItems={R.id.textview_cita_list_item_dia, R.id.textview_cita_list_item_mes, R.id.textview_cita_list_item_anho, R.id.textview_cita_list_item_hora, R.id.textview_cita_list_item_minuto, R.id.textview_cita_list_item_servicio, R.id.textview_cita_list_item_codcliente, R.id.textview_cita_list_item_codempleado};
+    int[] mListItems={R.id.textview_cita_list_item_dia,R.id.textview_cita_list_item_mes,R.id.textview_cita_list_item_anho,R.id.textview_cita_list_item_hora,R.id.textview_cita_list_item_minuto,R.id.textview_cita_list_item_servicio,R.id.textview_cita_list_item_codcliente,R.id.textview_cita_list_item_codempleado};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_consulta_4);
+        setContentView(R.layout.activity_consulta_4);
 
-        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById( R.id.toolbar_detalle_activity_3);
+        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_detalle_activity_3);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         lista=(ListView) findViewById( R.id.lista_dia4 );
         Cursor c= CitaProveedor.todo( getContentResolver() );
-        mAdapter=new SimpleCursorAdapter(getApplicationContext(), R.layout.cita_list_item_4,c,mListColumns,mListItems,0 );
+        mAdapter=new SimpleCursorAdapter(getApplicationContext(),R.layout.cita_list_item_4,c,mListColumns,mListItems,0 );
 
 
         lista.setAdapter( mAdapter );
@@ -87,7 +88,7 @@ public class CitaConsulta4 extends AppCompatActivity {
         }
         */
 
-        EditText editTextEmpleadoNombre=(EditText) findViewById( R.id.editTextEmpleadoNombre);
+        EditText editTextEmpleadoNombre=(EditText) findViewById(R.id.editTextEmpleadoNombre);
 
 
 
@@ -98,14 +99,14 @@ public class CitaConsulta4 extends AppCompatActivity {
 
 
         if(TextUtils.isEmpty(nombre)){
-            editTextEmpleadoNombre.setError(getString( R.string.error_campo_obligatorio));
+            editTextEmpleadoNombre.setError(getString(R.string.error_campo_obligatorio));
             editTextEmpleadoNombre.requestFocus();
             return;
         }
 
         Pattern patron = Pattern.compile("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$");
         if (!patron.matcher(nombre).matches() || nombre.length() > 20) {
-            editTextEmpleadoNombre.setError(getString( R.string.error_nombre_2));
+            editTextEmpleadoNombre.setError(getString(R.string.error_nombre_2));
             editTextEmpleadoNombre.requestFocus();
             return;
         }
@@ -113,7 +114,7 @@ public class CitaConsulta4 extends AppCompatActivity {
         //Cita cita=new Cita(G.SIN_VALOR_INT,Integer.parseInt(dia),Integer.parseInt(mes),Integer.parseInt(anho),Integer.parseInt(hora),Integer.parseInt(minuto),servicio,Integer.parseInt(cod_cliente),Integer.parseInt(cod_empleado),foto);
         //Cursor c= CitaProveedor.consulta2( getContentResolver(),Integer.parseInt(cod_empleado));
         Cursor c= CitaProveedor.consultaMultiple(nombre);
-        mAdapter=new SimpleCursorAdapter(getApplicationContext(), R.layout.cita_list_item_4,c,mListColumns,mListItems,0 );
+        mAdapter=new SimpleCursorAdapter(getApplicationContext(),R.layout.cita_list_item_4,c,mListColumns,mListItems,0 );
         lista.setAdapter( mAdapter );
 
 

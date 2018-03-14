@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import com.example.wenceslao.gestionempresa.R;
 import com.example.wenceslao.gestionempresa.constantes.G;
-import com.example.wenceslao.gestionempresa.pojos.*;
 import com.example.wenceslao.gestionempresa.proveedor.*;
+import com.example.wenceslao.gestionempresa.pojos.*;
 
 import java.util.regex.Pattern;
 
@@ -33,15 +33,15 @@ public class ClienteInsertarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_cliente_detalle);
+        setContentView(R.layout.activity_cliente_detalle);
 
-        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById( R.id.toolbar_detalle_activity);
+        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_detalle_activity);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imageViewCliente=(ImageView) findViewById( R.id.image_view_cliente);
+        imageViewCliente=(ImageView) findViewById(R.id.image_view_cliente);
 
-        ImageButton imageCamaraCliente=(ImageButton) findViewById( R.id.image_button_camara_cliente);
+        ImageButton imageCamaraCliente=(ImageButton) findViewById(R.id.image_button_camara_cliente);
         imageCamaraCliente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -49,7 +49,7 @@ public class ClienteInsertarActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton imageGaleriaCliente=(ImageButton) findViewById( R.id.image_button_galeria_cliente);
+        ImageButton imageGaleriaCliente=(ImageButton) findViewById(R.id.image_button_galeria_cliente);
         imageGaleriaCliente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -103,7 +103,7 @@ public class ClienteInsertarActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem menuItem=menu.add(Menu.NONE, G.GUARDAR,Menu.NONE,"Guardar");
-        menuItem.setIcon( R.drawable.ic_action_guardar);
+        menuItem.setIcon(R.drawable.ic_action_guardar);
         menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
         return super.onCreateOptionsMenu(menu);
@@ -120,10 +120,10 @@ public class ClienteInsertarActivity extends AppCompatActivity {
     }
 
     void attemptGuardar(){
-        EditText editTextClienteNombre=(EditText) findViewById( R.id.editTextClienteNombre);
-        EditText editTextClienteApellidos=(EditText) findViewById( R.id.editTextClienteApellidos);
-        EditText editTextClienteEmail=(EditText) findViewById( R.id.editTextClienteEmail);
-        EditText editTextClienteTelefono=(EditText) findViewById( R.id.editTextClienteTelefono);
+        EditText editTextClienteNombre=(EditText) findViewById(R.id.editTextClienteNombre);
+        EditText editTextClienteApellidos=(EditText) findViewById(R.id.editTextClienteApellidos);
+        EditText editTextClienteEmail=(EditText) findViewById(R.id.editTextClienteEmail);
+        EditText editTextClienteTelefono=(EditText) findViewById(R.id.editTextClienteTelefono);
 
 
         editTextClienteNombre.setError(null);
@@ -137,44 +137,44 @@ public class ClienteInsertarActivity extends AppCompatActivity {
         String telefono=editTextClienteTelefono.getText().toString();
 
         if(TextUtils.isEmpty(nombre)){
-            editTextClienteNombre.setError(getString( R.string.error_campo_obligatorio));
+            editTextClienteNombre.setError(getString(R.string.error_campo_obligatorio));
             editTextClienteNombre.requestFocus();
             return;
         }
 
         Pattern patron = Pattern.compile("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$");
         if (!patron.matcher(nombre).matches() || nombre.length() > 20) {
-            editTextClienteNombre.setError(getString( R.string.error_nombre_2));
+            editTextClienteNombre.setError(getString(R.string.error_nombre_2));
             editTextClienteNombre.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(apellidos)){
-            editTextClienteApellidos.setError(getString( R.string.error_campo_obligatorio));
+            editTextClienteApellidos.setError(getString(R.string.error_campo_obligatorio));
             editTextClienteApellidos.requestFocus();
             return;
         }
 
         if (!patron.matcher(apellidos).matches() || apellidos.length() > 20) {
-            editTextClienteApellidos.setError(getString( R.string.error_nombre_2));
+            editTextClienteApellidos.setError(getString(R.string.error_nombre_2));
             editTextClienteApellidos.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(email)){
-            editTextClienteEmail.setError(getString( R.string.error_campo_obligatorio));
+            editTextClienteEmail.setError(getString(R.string.error_campo_obligatorio));
             editTextClienteEmail.requestFocus();
             return;
         }
 
         Pattern pattern1 = Patterns.EMAIL_ADDRESS;
         if(!pattern1.matcher(editTextClienteEmail.getText().toString()).matches()){
-            editTextClienteEmail.setError(getString( R.string.error_invalid_email));
+            editTextClienteEmail.setError(getString(R.string.error_invalid_email));
             return;
         }
 
         if(TextUtils.isEmpty(telefono)){
-            editTextClienteTelefono.setError(getString( R.string.error_campo_obligatorio));
+            editTextClienteTelefono.setError(getString(R.string.error_campo_obligatorio));
             editTextClienteTelefono.requestFocus();
             return;
         }
@@ -182,7 +182,7 @@ public class ClienteInsertarActivity extends AppCompatActivity {
 
         Pattern pattern = Patterns.PHONE;
         if(!pattern.matcher(editTextClienteTelefono.getText().toString()).matches()){
-            editTextClienteTelefono.setError(getString( R.string.error_longitudtlf));
+            editTextClienteTelefono.setError(getString(R.string.error_longitudtlf));
             return;
         }
 

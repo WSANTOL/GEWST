@@ -32,15 +32,15 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_cita_detalle);
+        setContentView(R.layout.activity_cita_detalle);
 
-        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById( R.id.toolbar_detalle_activity_3);
+        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_detalle_activity_3);
         setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imageViewCita=(ImageView) findViewById( R.id.image_view_cita);
+        imageViewCita=(ImageView) findViewById(R.id.image_view_cita);
 
-        ImageButton imageCamaraCita=(ImageButton) findViewById( R.id.image_button_camara_cita);
+        ImageButton imageCamaraCita=(ImageButton) findViewById(R.id.image_button_camara_cita);
         imageCamaraCita.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -48,7 +48,7 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
             }
         });
 
-        ImageButton imageGaleriaCita=(ImageButton) findViewById( R.id.image_button_galeria_cita);
+        ImageButton imageGaleriaCita=(ImageButton) findViewById(R.id.image_button_galeria_cita);
         imageGaleriaCita.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -103,7 +103,7 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem menuItem=menu.add(Menu.NONE, G.GUARDAR,Menu.NONE,"Guardar");
-        menuItem.setIcon( R.drawable.ic_action_guardar);
+        menuItem.setIcon(R.drawable.ic_action_guardar);
         menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
         return super.onCreateOptionsMenu(menu);
@@ -120,14 +120,14 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
     }
 
     void attemptGuardar(){
-        EditText editTextCitaDia=(EditText) findViewById( R.id.editTextCitaDia);
-        EditText editTextCitaMes=(EditText) findViewById( R.id.editTextCitaMes);
-        EditText editTextCitaAnho=(EditText) findViewById( R.id.editTextCitaAnho);
-        EditText editTextCitaHora=(EditText) findViewById( R.id.editTextCitaHora);
-        EditText editTextCitaMinuto=(EditText) findViewById( R.id.editTextCitaMinuto);
-        EditText editTextCitaServicio=(EditText) findViewById( R.id.editTextCitaServicio);
-        EditText editTextCitaCodCliente=(EditText) findViewById( R.id.editTextCitaCliente);
-        EditText editTextCitaCodEmpleado=(EditText) findViewById( R.id.editTextCitaEmpleado);
+        EditText editTextCitaDia=(EditText) findViewById(R.id.editTextCitaDia);
+        EditText editTextCitaMes=(EditText) findViewById(R.id.editTextCitaMes);
+        EditText editTextCitaAnho=(EditText) findViewById(R.id.editTextCitaAnho);
+        EditText editTextCitaHora=(EditText) findViewById(R.id.editTextCitaHora);
+        EditText editTextCitaMinuto=(EditText) findViewById(R.id.editTextCitaMinuto);
+        EditText editTextCitaServicio=(EditText) findViewById(R.id.editTextCitaServicio);
+        EditText editTextCitaCodCliente=(EditText) findViewById(R.id.editTextCitaCliente);
+        EditText editTextCitaCodEmpleado=(EditText) findViewById(R.id.editTextCitaEmpleado);
 
         editTextCitaDia.setError(null);
         editTextCitaMes.setError(null);
@@ -149,59 +149,59 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
         String cod_empleado=editTextCitaCodEmpleado.getText().toString();
 
         if(TextUtils.isEmpty(dia)){
-            editTextCitaDia.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaDia.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaDia.requestFocus();
             return;
         }
 
         int dia_int=Integer.parseInt(dia);
         if (dia_int<1 || dia_int > 30) {
-            editTextCitaDia.setError(getString( R.string.error_fecha));
+            editTextCitaDia.setError(getString(R.string.error_fecha));
             editTextCitaDia.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(mes)){
-            editTextCitaMes.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaMes.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaMes.requestFocus();
             return;
         }
 
         int mes_int=Integer.parseInt(mes);
         if (mes_int<1 || mes_int > 12) {
-            editTextCitaMes.setError(getString( R.string.error_fecha));
+            editTextCitaMes.setError(getString(R.string.error_fecha));
             editTextCitaMes.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(anho)){
-            editTextCitaAnho.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaAnho.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaAnho.requestFocus();
             return;
         }
 
         int anho_int=Integer.parseInt(anho);
         if (anho_int<2017 || anho_int > 2018) {
-            editTextCitaAnho.setError(getString( R.string.error_fecha));
+            editTextCitaAnho.setError(getString(R.string.error_fecha));
             editTextCitaAnho.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(hora)){
-            editTextCitaHora.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaHora.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaHora.requestFocus();
             return;
         }
 
         int hora_int=Integer.parseInt(hora);
         if (hora_int<9 || hora_int > 20) {
-            editTextCitaHora.setError(getString( R.string.error_fecha));
+            editTextCitaHora.setError(getString(R.string.error_fecha));
             editTextCitaHora.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(minuto)){
-            editTextCitaMinuto.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaMinuto.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaMinuto.requestFocus();
             return;
         }
@@ -209,13 +209,13 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
         int minuto_int=Integer.parseInt(minuto);
         int[] disponibles={0, 15, 30, 45};
         if (Arrays.asList(disponibles).contains(minuto_int)) {
-            editTextCitaMinuto.setError(getString( R.string.error_fecha));
+            editTextCitaMinuto.setError(getString(R.string.error_fecha));
             editTextCitaMinuto.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(servicio)){
-            editTextCitaServicio.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaServicio.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaServicio.requestFocus();
             return;
         }
@@ -223,33 +223,33 @@ public class CitaInsertarActivity2 extends AppCompatActivity {
 
         String[] serv_dispo={"Corte", "Peinado", "Tinte", "Estetica"};
         if (!Arrays.asList(serv_dispo).contains(servicio)) {
-            editTextCitaServicio.setError(getString( R.string.error_fecha));
+            editTextCitaServicio.setError(getString(R.string.error_fecha));
             editTextCitaServicio.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(cod_cliente)){
-            editTextCitaCodCliente.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaCodCliente.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaCodCliente.requestFocus();
             return;
         }
 
         int cliente_int=Integer.parseInt(cod_cliente);
         if (cliente_int<1 || cliente_int > 4) {
-            editTextCitaCodCliente.setError(getString( R.string.error_codigo));
+            editTextCitaCodCliente.setError(getString(R.string.error_codigo));
             editTextCitaCodCliente.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(cod_empleado)){
-            editTextCitaCodEmpleado.setError(getString( R.string.error_campo_obligatorio));
+            editTextCitaCodEmpleado.setError(getString(R.string.error_campo_obligatorio));
             editTextCitaCodEmpleado.requestFocus();
             return;
         }
 
         int empleado_int=Integer.parseInt(cod_empleado);
         if (empleado_int<1 || empleado_int > 6) {
-            editTextCitaCodEmpleado.setError(getString( R.string.error_codigo));
+            editTextCitaCodEmpleado.setError(getString(R.string.error_codigo));
             editTextCitaCodEmpleado.requestFocus();
             return;
         }

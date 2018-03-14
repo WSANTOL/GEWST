@@ -1,10 +1,10 @@
 package com.example.wenceslao.gestionempresa.cliente;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
@@ -17,7 +17,7 @@ public class ActividadCliente extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.actividad_cliente);
 
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Create the adapter that will return a fragment for each of the three
@@ -26,11 +26,11 @@ public class ActividadCliente extends AppCompatActivity {
         ClienteListFragment clienteListFragment = new ClienteListFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add( R.id.fragment_cliente, clienteListFragment);
+        transaction.add(R.id.fragment_cliente, clienteListFragment);
         transaction.commit();
 
         //Funcionalidad del Floating Button
-        FloatingActionButton fab=(FloatingActionButton) findViewById( R.id.fab);
+        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

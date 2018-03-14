@@ -53,6 +53,28 @@
             android:label="@string/title_activity_actividad_navigator"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".ActividadServicios"
+            android:label="@string/title_activity_actividad_servicios"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
+            android:name=".ActividadAddCita"
+            android:label="@string/title_activity_actividad_add_cita"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
             android:name=".ActividadAyuda"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar"/>
@@ -60,11 +82,178 @@
             android:name=".ActividadAyuda2"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ActividadContacto"
+            android:label="@string/title_activity_actividad_contacto"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
+            android:name=".ActividadConsultas"
+            android:label="Consultas"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
+            android:name=".cliente.ActividadCliente"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+
         <provider
             android:name=".proveedor.ProveedorDeContenido"
             android:authorities="com.example.wenceslao.gestionempresa.proveedor.ProveedorDeContenido"
             android:enabled="true"
             android:exported="true"/>
+
+        <activity
+            android:name=".cliente.ClienteInsertarActivity"
+            android:parentActivityName=".cliente.ActividadCliente"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cliente.ActividadCliente"/>
+        </activity>
+        <activity
+            android:name=".cliente.ClienteModificarActivity"
+            android:parentActivityName=".cliente.ActividadCliente"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cliente.ActividadCliente"/>
+        </activity>
+        <activity
+            android:name=".empleado.ActividadEmpleado"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
+            android:name=".empleado.EmpleadoInsertarActivity"
+            android:parentActivityName=".empleado.ActividadEmpleado"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".empleado.ActividadEmpleado"/>
+        </activity>
+        <activity
+            android:name=".empleado.EmpleadoModificarActivity"
+            android:parentActivityName=".empleado.ActividadEmpleado"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".empleado.ActividadEmpleado"/>
+        </activity>
+        <activity
+            android:name=".cita.ActividadCita"
+            android:parentActivityName=".ActividadNavigator"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadNavigator"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaInsertarActivity"
+            android:parentActivityName=".cita.ActividadCita"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cita.ActividadCita"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaModificarActivity"
+            android:parentActivityName=".cita.ActividadCita"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".cita.ActividadCita"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaInsertarActivity2"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".empleado.EmpleadoInsertarActivity2"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".cliente.ClienteInsertarActivity2"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".cita.CitaConsulta1"
+            android:label="Citas por dia"
+            android:parentActivityName=".ActividadConsultas"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadConsultas"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaConsulta2"
+            android:label="Citas por empleado"
+            android:parentActivityName=".ActividadConsultas"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadConsultas"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaConsulta3"
+            android:label="Citas por cliente"
+            android:parentActivityName=".ActividadConsultas"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadConsultas"/>
+        </activity>
+        <activity
+            android:name=".cita.CitaConsulta4"
+            android:label="Citas por empleado"
+            android:parentActivityName=".ActividadConsultas"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActividadConsultas"/>
+        </activity>
     </application>
 
 </manifest>

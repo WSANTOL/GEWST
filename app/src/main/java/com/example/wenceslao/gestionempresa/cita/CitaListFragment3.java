@@ -1,6 +1,7 @@
 package com.example.wenceslao.gestionempresa.cita;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,17 +10,28 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
+import android.text.TextUtils;
+import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.wenceslao.gestionempresa.R;
 import com.example.wenceslao.gestionempresa.constantes.G;
+import com.example.wenceslao.gestionempresa.constantes.Utilidades;
+import com.example.wenceslao.gestionempresa.proveedor.CitaProveedor;
 import com.example.wenceslao.gestionempresa.proveedor.ContratoCita;
+
+import java.io.FileNotFoundException;
 
 public class CitaListFragment3 extends ListFragment
 		implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -51,7 +63,7 @@ public class CitaListFragment3 extends ListFragment
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
 		MenuItem menuItem2=menu.add(Menu.NONE, G.CONSULTA1,Menu.NONE,"Consulta 1");
-		menuItem2.setIcon( R.drawable.ic_consulta1);
+		menuItem2.setIcon(R.drawable.ic_consulta1);
 		menuItem2.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		super.onCreateOptionsMenu(menu, inflater);
 	}
@@ -83,7 +95,7 @@ public class CitaListFragment3 extends ListFragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		//Log.i(LOGTAG, "onCreateView");
-		View v = inflater.inflate( R.layout.fragment_cita_list, container, false);
+		View v = inflater.inflate(R.layout.fragment_cita_list, container, false);
 
 		mAdapter = new CitaCursorAdapter(getActivity());
 		setListAdapter(mAdapter);
@@ -154,28 +166,28 @@ public class CitaListFragment3 extends ListFragment
 			String cod_empleado = cursor.getString(cursor.getColumnIndex(ContratoCita.Cita.COD_EMPLEADO));
 
 	
-			TextView textviewDia = (TextView) view.findViewById( R.id.textview_cita_list_item_dia);
+			TextView textviewDia = (TextView) view.findViewById(R.id.textview_cita_list_item_dia);
 			textviewDia.setText(dia);
 
-			TextView textviewMes = (TextView) view.findViewById( R.id.textview_cita_list_item_mes);
+			TextView textviewMes = (TextView) view.findViewById(R.id.textview_cita_list_item_mes);
 			textviewMes.setText(mes);
 
-			TextView textviewAnho = (TextView) view.findViewById( R.id.textview_cita_list_item_anho);
+			TextView textviewAnho = (TextView) view.findViewById(R.id.textview_cita_list_item_anho);
 			textviewAnho.setText(anho);
 
-			TextView textviewHora = (TextView) view.findViewById( R.id.textview_cita_list_item_hora);
+			TextView textviewHora = (TextView) view.findViewById(R.id.textview_cita_list_item_hora);
 			textviewHora.setText(hora);
 
-			TextView textviewMinuto = (TextView) view.findViewById( R.id.textview_cita_list_item_minuto);
+			TextView textviewMinuto = (TextView) view.findViewById(R.id.textview_cita_list_item_minuto);
 			textviewMinuto.setText(minuto);
 
-			TextView textviewServicio = (TextView) view.findViewById( R.id.textview_cita_list_item_servicio);
+			TextView textviewServicio = (TextView) view.findViewById(R.id.textview_cita_list_item_servicio);
 			textviewServicio.setText(servicio);
 
-			TextView textviewCliente = (TextView) view.findViewById( R.id.textview_cita_list_item_codcliente);
+			TextView textviewCliente = (TextView) view.findViewById(R.id.textview_cita_list_item_codcliente);
 			textviewCliente.setText(cod_cliente);
 
-			TextView textviewEmpleado = (TextView) view.findViewById( R.id.textview_cita_list_item_codempleado);
+			TextView textviewEmpleado = (TextView) view.findViewById(R.id.textview_cita_list_item_codempleado);
 			textviewEmpleado.setText(cod_empleado);
 
 
@@ -184,7 +196,7 @@ public class CitaListFragment3 extends ListFragment
 		@Override
 		public View newView(Context context, Cursor cursor, ViewGroup parent) {
 			LayoutInflater inflater = LayoutInflater.from(context);
-			View v = inflater.inflate( R.layout.cita_list_item_1, parent, false);
+			View v = inflater.inflate(R.layout.cita_list_item_1, parent, false);
 			bindView(v, context, cursor);
 			return v;
 		}

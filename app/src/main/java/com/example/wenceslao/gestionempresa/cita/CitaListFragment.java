@@ -64,7 +64,7 @@ public class CitaListFragment extends ListFragment
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		MenuItem menuItem=menu.add(Menu.NONE, G.INSERTAR,Menu.NONE,"Insertar");
-		menuItem.setIcon( R.drawable.ic_nuevo_registro);
+		menuItem.setIcon(R.drawable.ic_nuevo_registro);
 		menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 		super.onCreateOptionsMenu(menu, inflater);
 	}
@@ -95,7 +95,7 @@ public class CitaListFragment extends ListFragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		//Log.i(LOGTAG, "onCreateView");
-		View v = inflater.inflate( R.layout.fragment_cita_list, container, false);
+		View v = inflater.inflate(R.layout.fragment_cita_list, container, false);
 
 		mAdapter = new CitaCursorAdapter(getActivity());
 		setListAdapter(mAdapter);
@@ -132,7 +132,7 @@ public class CitaListFragment extends ListFragment
 		public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
 			//debe aparecer menu contextual
 			MenuInflater inflater= actionMode.getMenuInflater();
-			inflater.inflate( R.menu.menu_contextual,menu);
+			inflater.inflate(R.menu.menu_contextual,menu);
 			return true;
 		}
 
@@ -228,32 +228,32 @@ public class CitaListFragment extends ListFragment
 			String cod_empleado = cursor.getString(cursor.getColumnIndex(ContratoCita.Cita.COD_EMPLEADO));
 
 	
-			TextView textviewDia = (TextView) view.findViewById( R.id.textview_cita_list_item_dia);
+			TextView textviewDia = (TextView) view.findViewById(R.id.textview_cita_list_item_dia);
 			textviewDia.setText(dia);
 
-			TextView textviewMes = (TextView) view.findViewById( R.id.textview_cita_list_item_mes);
+			TextView textviewMes = (TextView) view.findViewById(R.id.textview_cita_list_item_mes);
 			textviewMes.setText(mes);
 
-			TextView textviewAnho = (TextView) view.findViewById( R.id.textview_cita_list_item_anho);
+			TextView textviewAnho = (TextView) view.findViewById(R.id.textview_cita_list_item_anho);
 			textviewAnho.setText(anho);
 
-			TextView textviewHora = (TextView) view.findViewById( R.id.textview_cita_list_item_hora);
+			TextView textviewHora = (TextView) view.findViewById(R.id.textview_cita_list_item_hora);
 			textviewHora.setText(hora);
 
-			TextView textviewMinuto = (TextView) view.findViewById( R.id.textview_cita_list_item_minuto);
+			TextView textviewMinuto = (TextView) view.findViewById(R.id.textview_cita_list_item_minuto);
 			textviewMinuto.setText(minuto);
 
-			TextView textviewServicio = (TextView) view.findViewById( R.id.textview_cita_list_item_servicio);
+			TextView textviewServicio = (TextView) view.findViewById(R.id.textview_cita_list_item_servicio);
 			textviewServicio.setText(servicio);
 
-			TextView textviewCliente = (TextView) view.findViewById( R.id.textview_cita_list_item_codcliente);
+			TextView textviewCliente = (TextView) view.findViewById(R.id.textview_cita_list_item_codcliente);
 			textviewCliente.setText(cod_cliente);
 
-			TextView textviewEmpleado = (TextView) view.findViewById( R.id.textview_cita_list_item_codempleado);
+			TextView textviewEmpleado = (TextView) view.findViewById(R.id.textview_cita_list_item_codempleado);
 			textviewEmpleado.setText(cod_empleado);
 
 			//poner la imagen
-			ImageView imagen_cita = (ImageView) view.findViewById( R.id.image_cita);
+			ImageView imagen_cita = (ImageView) view.findViewById(R.id.image_cita);
 			try {
 				Utilidades.loadImageFromStorage(getActivity(),"img_cita"+ID+".jpg",imagen_cita);
 			} catch (FileNotFoundException e) {
@@ -270,7 +270,7 @@ public class CitaListFragment extends ListFragment
 		@Override
 		public View newView(Context context, Cursor cursor, ViewGroup parent) {
 			LayoutInflater inflater = LayoutInflater.from(context);
-			View v = inflater.inflate( R.layout.cita_list_item, parent, false);
+			View v = inflater.inflate(R.layout.cita_list_item, parent, false);
 			bindView(v, context, cursor);
 			return v;
 		}

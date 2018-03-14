@@ -178,8 +178,8 @@ public class ProveedorDeContenido extends ContentProvider{
                     + ContratoCita.Cita.SERVICIO + " TEXT , "
                     + ContratoCita.Cita.COD_CLIENTE + " INT , "
                     + ContratoCita.Cita.COD_EMPLEADO + " INT , "
-                    + "FOREIGN KEY ("+ ContratoCita.Cita.COD_CLIENTE +") REFERENCES " + CLIENTE_TABLE_NAME +"("+ ContratoCliente.Cliente._ID + "),"
-                    + "FOREIGN KEY ("+ ContratoCita.Cita.COD_EMPLEADO +") REFERENCES " + EMPLEADO_TABLE_NAME +"("+ ContratoEmpleado.Empleado._ID + "));"
+                    + "FOREIGN KEY ("+ContratoCita.Cita.COD_CLIENTE +") REFERENCES " + CLIENTE_TABLE_NAME +"("+ ContratoCliente.Cliente._ID + "),"
+                    + "FOREIGN KEY ("+ContratoCita.Cita.COD_EMPLEADO +") REFERENCES " + EMPLEADO_TABLE_NAME +"("+ ContratoEmpleado.Empleado._ID + "));"
             );
 
             inicializarDatos(db);
@@ -438,7 +438,7 @@ public class ProveedorDeContenido extends ContentProvider{
 
     private static final String EMPLEADO_CITAS= EMPLEADO_TABLE_NAME +
             "INNER JOIN  " + CITA_TABLE_NAME +
-            "ON"+ ContratoEmpleado.Empleado._ID+ " = "+ ContratoCita.Cita.COD_EMPLEADO;
+            "ON"+ ContratoEmpleado.Empleado._ID+ " = "+ContratoCita.Cita.COD_EMPLEADO;
 
     private final String[] columnas = new String[]{
             EMPLEADO_TABLE_NAME + "." + ContratoEmpleado.Empleado._ID,

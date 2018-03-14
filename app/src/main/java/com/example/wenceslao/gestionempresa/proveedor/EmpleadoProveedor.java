@@ -19,7 +19,7 @@ import java.io.IOException;
 
 public class EmpleadoProveedor {
 
-    static public void insert(ContentResolver resolver, Empleado empleado, Context contexto){
+    static public void insert(ContentResolver resolver, Empleado empleado,Context contexto){
         Uri uri=ContratoEmpleado.Empleado.CONTENT_URI;
 
         ContentValues values=new ContentValues();
@@ -50,7 +50,7 @@ public class EmpleadoProveedor {
                 if(estado.equals( Environment.MEDIA_MOUNTED)){
                     sdDisponible=true;
                     sdAccesoEscritura=true;
-                    exitome= Utilidades.guardarMemoriaExterna(empleado.getImagen(),contexto,"img_empleado"+empleadoid+".jpg",resolver);
+                    exitome=Utilidades.guardarMemoriaExterna(empleado.getImagen(),contexto,"img_empleado"+empleadoid+".jpg",resolver);
                     if(exitome){
                         Toast.makeText(contexto,"Imagen guardada con exito en MEMORIA EXTERNA", Toast.LENGTH_SHORT).show();
                     }else{
@@ -80,7 +80,7 @@ public class EmpleadoProveedor {
 
     }
 
-    static public void update(ContentResolver resolver, Empleado empleado, Context contexto){
+    static public void update(ContentResolver resolver,Empleado empleado, Context contexto){
         Uri uri=Uri.parse(ContratoEmpleado.Empleado.CONTENT_URI + "/" + empleado.getID());
 
         ContentValues values=new ContentValues();
@@ -110,7 +110,7 @@ public class EmpleadoProveedor {
                 if(estado.equals( Environment.MEDIA_MOUNTED)){
                     sdDisponible=true;
                     sdAccesoEscritura=true;
-                    exitome= Utilidades.guardarMemoriaExterna(empleado.getImagen(),contexto,"img_empleado"+empleado.getID()+".jpg",resolver);
+                    exitome=Utilidades.guardarMemoriaExterna(empleado.getImagen(),contexto,"img_empleado"+empleado.getID()+".jpg",resolver);
                     if(exitome){
                         Toast.makeText(contexto,"Imagen guardada con exito en MEMORIA EXTERNA", Toast.LENGTH_SHORT).show();
                     }else{

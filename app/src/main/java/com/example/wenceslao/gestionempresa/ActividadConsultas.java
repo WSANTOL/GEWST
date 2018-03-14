@@ -3,22 +3,37 @@ package com.example.wenceslao.gestionempresa;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wenceslao.gestionempresa.cita.CitaConsulta1;
 import com.example.wenceslao.gestionempresa.cita.CitaConsulta2;
 import com.example.wenceslao.gestionempresa.cita.CitaConsulta3;
-
+import com.example.wenceslao.gestionempresa.cita.CitaConsulta4;
+import java.io.IOException;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 public class ActividadConsultas extends AppCompatActivity {
     final int SPANISH=1;
@@ -28,17 +43,17 @@ public class ActividadConsultas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.actividad_consultas);
+        setContentView(R.layout.actividad_consultas);
         Intent intent=this.getIntent();
 
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //para que vaya atras
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +112,7 @@ public class ActividadConsultas extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate( R.menu.menu_actividad_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_actividad_principal, menu);
         return true;
     }
 
@@ -118,7 +133,7 @@ public class ActividadConsultas extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.action_quit:
-                Toast.makeText(getApplicationContext(), R.string.cierre_app,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.cierre_app,Toast.LENGTH_SHORT).show();
                 finish();
                 Intent intent1 = new Intent(Intent.ACTION_MAIN);
                 intent1.addCategory(Intent.CATEGORY_HOME);

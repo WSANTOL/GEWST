@@ -50,17 +50,17 @@ public class ActividadContacto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.actividad_contacto);
+        setContentView(R.layout.actividad_contacto);
         Intent intent=this.getIntent();
 
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //para que vaya atras
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,9 +69,9 @@ public class ActividadContacto extends AppCompatActivity {
             }
         });
 
-        imageViewImagen=(ImageView) findViewById( R.id.image_view_imagen);
+        imageViewImagen=(ImageView) findViewById(R.id.image_view_imagen);
 
-        ImageButton imageButtonCamara=(ImageButton) findViewById( R.id.image_button_camara);
+        ImageButton imageButtonCamara=(ImageButton) findViewById(R.id.image_button_camara);
         imageButtonCamara.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -79,7 +79,7 @@ public class ActividadContacto extends AppCompatActivity {
             }
         });
 
-        ImageButton imageButtonGaleria=(ImageButton) findViewById( R.id.image_button_galeria);
+        ImageButton imageButtonGaleria=(ImageButton) findViewById(R.id.image_button_galeria);
         imageButtonGaleria.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -87,15 +87,15 @@ public class ActividadContacto extends AppCompatActivity {
             }
         });
 
-        final Button btnEnviar= (Button) findViewById( R.id.btnEnviar);
+        final Button btnEnviar= (Button) findViewById(R.id.btnEnviar);
         btnEnviar.setEnabled(false);
-        TextView txtInfo2=(TextView) findViewById( R.id.txtInfo2);
-        txtInfo2.setText(Html.fromHtml(getString( R.string.info2)));
-        Button btnValidar= (Button) findViewById( R.id.btnValid);
-        editTextNombre=(EditText) findViewById( R.id.editTxtNombreCompleto);
-        editTextTelefono=(EditText) findViewById( R.id.editTxtTlfContacto);
-        editTextEmail=(EditText) findViewById( R.id.email_contacto);
-        editTextMensaje=(EditText) findViewById( R.id.editTxtMensaje);
+        TextView txtInfo2=(TextView) findViewById(R.id.txtInfo2);
+        txtInfo2.setText(Html.fromHtml(getString(R.string.info2)));
+        Button btnValidar= (Button) findViewById(R.id.btnValid);
+        editTextNombre=(EditText) findViewById(R.id.editTxtNombreCompleto);
+        editTextTelefono=(EditText) findViewById(R.id.editTxtTlfContacto);
+        editTextEmail=(EditText) findViewById(R.id.email_contacto);
+        editTextMensaje=(EditText) findViewById(R.id.editTxtMensaje);
 
         btnValidar.setOnClickListener(new View.OnClickListener(){
             boolean d=false;
@@ -117,14 +117,14 @@ public class ActividadContacto extends AppCompatActivity {
                     String mensaje=editTextMensaje.getText().toString();
 
                     if(TextUtils.isEmpty(nombre)){
-                        editTextNombre.setError(getString( R.string.error_campo_obligatorio));
+                        editTextNombre.setError(getString(R.string.error_campo_obligatorio));
                         editTextNombre.requestFocus();
                         return;
                     }
 
                     Pattern patron = Pattern.compile("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$");
                     if (!patron.matcher(nombre).matches() || nombre.length() > 40) {
-                        editTextNombre.setError(getString( R.string.error_nombre));
+                        editTextNombre.setError(getString(R.string.error_nombre));
                         editTextNombre.requestFocus();
                         return;
                     }
@@ -132,36 +132,36 @@ public class ActividadContacto extends AppCompatActivity {
 
 
                     if(TextUtils.isEmpty(telefono)){
-                        editTextTelefono.setError(getString( R.string.error_campo_obligatorio));
+                        editTextTelefono.setError(getString(R.string.error_campo_obligatorio));
                         editTextTelefono.requestFocus();
                         return;
                     }
 
                     Pattern pattern = Patterns.PHONE;
                     if(!pattern.matcher(editTextTelefono.getText().toString()).matches()){
-                        editTextTelefono.setError(getString( R.string.error_longitudtlf));
+                        editTextTelefono.setError(getString(R.string.error_longitudtlf));
                         return;
                     }
 
 
                     if(TextUtils.isEmpty(email)){
-                        editTextEmail.setError(getString( R.string.error_campo_obligatorio));
+                        editTextEmail.setError(getString(R.string.error_campo_obligatorio));
                         editTextEmail.requestFocus();
                         return;
                     }
 
                     Pattern pattern1 = Patterns.EMAIL_ADDRESS;
                     if(!pattern1.matcher(editTextEmail.getText().toString()).matches()){
-                        editTextEmail.setError(getString( R.string.error_invalid_email));
+                        editTextEmail.setError(getString(R.string.error_invalid_email));
                         return;
                     }
 
                     if(TextUtils.isEmpty(mensaje)){
-                        editTextMensaje.setError(getString( R.string.error_campo_obligatorio));
+                        editTextMensaje.setError(getString(R.string.error_campo_obligatorio));
                         editTextMensaje.requestFocus();
                         return;
                     }
-                    Toast.makeText(getApplicationContext(), R.string.mensaje1,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.mensaje1,Toast.LENGTH_SHORT).show();
                     d=true;
 
                 }while(d!=true);
@@ -174,17 +174,17 @@ public class ActividadContacto extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), R.string.mensaje4,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.mensaje4,Toast.LENGTH_SHORT).show();
                 Intent intent1=new Intent(getApplicationContext(),ActividadNavigator.class);
                 startActivity(intent1);
             }
         });
 
-        final CheckBox checkBoxPolitica=(CheckBox) findViewById( R.id.checkboxPolitica);
+        final CheckBox checkBoxPolitica=(CheckBox) findViewById(R.id.checkboxPolitica);
         checkBoxPolitica.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), R.string.selec_politica,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.selec_politica,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -270,7 +270,7 @@ public class ActividadContacto extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate( R.menu.menu_actividad_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_actividad_principal, menu);
         return true;
     }
 
@@ -291,7 +291,7 @@ public class ActividadContacto extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.action_quit:
-                Toast.makeText(getApplicationContext(), R.string.cierre_app,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.cierre_app,Toast.LENGTH_SHORT).show();
                 finish();
                 Intent intent1 = new Intent(Intent.ACTION_MAIN);
                 intent1.addCategory(Intent.CATEGORY_HOME);

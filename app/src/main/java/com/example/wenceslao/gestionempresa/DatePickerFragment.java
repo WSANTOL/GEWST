@@ -2,12 +2,13 @@ package com.example.wenceslao.gestionempresa;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.DialogFragment;
 import android.widget.DatePicker;
+import android.widget.TextView;
 
 /**
  * Created by wenceslao on 17/10/2017.

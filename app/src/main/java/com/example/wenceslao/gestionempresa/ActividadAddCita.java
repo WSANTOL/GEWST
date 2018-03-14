@@ -10,14 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Patterns;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -36,13 +36,13 @@ public class ActividadAddCita extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.actividad_add_cita);
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar);
+        setContentView(R.layout.actividad_add_cita);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById( R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,28 +52,28 @@ public class ActividadAddCita extends AppCompatActivity {
         });
 
         //Spinner de servicios
-        Spinner lista_servicios=(Spinner) findViewById( R.id.lista_servicios);
-        String[] servicios={getString( R.string.servicio1),getString( R.string.servicio2),getString( R.string.servicio3),getString( R.string.servicio4)};
+        Spinner lista_servicios=(Spinner) findViewById(R.id.lista_servicios);
+        String[] servicios={getString(R.string.servicio1),getString(R.string.servicio2),getString(R.string.servicio3),getString(R.string.servicio4)};
         lista_servicios.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,servicios));
 
         //Spinner de empleados
-        Spinner lista_empleados=(Spinner) findViewById( R.id.lista_peluqueros);
+        Spinner lista_empleados=(Spinner) findViewById(R.id.lista_peluqueros);
         String[] peluqueros={"María","Juana","Pepe","Juan"};
         lista_empleados.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,peluqueros));
 
         DatePicker fecha;
-        fecha=(DatePicker) findViewById( R.id.fecha);
+        fecha=(DatePicker) findViewById(R.id.fecha);
 
         TimePicker timePicker1;
-        timePicker1 = (TimePicker) findViewById( R.id.hora);
+        timePicker1 = (TimePicker) findViewById(R.id.hora);
 
-        final Button btnAdd= (Button) findViewById( R.id.btnAdd);
+        final Button btnAdd= (Button) findViewById(R.id.btnAdd);
         btnAdd.setEnabled(false);
 
-        Button btnValidar= (Button) findViewById( R.id.btnValidacion);
-        editTextNombre=(EditText) findViewById( R.id.nombre_cliente);
-        editTextTelefono=(EditText) findViewById( R.id.telefono_cliente);
-        editTextEmail=(EditText) findViewById( R.id.email_cliente);
+        Button btnValidar= (Button) findViewById(R.id.btnValidacion);
+        editTextNombre=(EditText) findViewById(R.id.nombre_cliente);
+        editTextTelefono=(EditText) findViewById(R.id.telefono_cliente);
+        editTextEmail=(EditText) findViewById(R.id.email_cliente);
 
         btnValidar.setOnClickListener(new View.OnClickListener(){
             boolean d=false;
@@ -93,14 +93,14 @@ public class ActividadAddCita extends AppCompatActivity {
                     String email=editTextEmail.getText().toString();
 
                     if(TextUtils.isEmpty(nombre)){
-                        editTextNombre.setError(getString( R.string.error_campo_obligatorio));
+                        editTextNombre.setError(getString(R.string.error_campo_obligatorio));
                         editTextNombre.requestFocus();
                         return;
                     }
 
                     Pattern patron = Pattern.compile("^[a-zA-Z ]+$");
                     if (!patron.matcher(nombre).matches() || nombre.length() > 40) {
-                        editTextNombre.setError(getString( R.string.error_nombre));
+                        editTextNombre.setError(getString(R.string.error_nombre));
                         editTextNombre.requestFocus();
                         return;
                     }
@@ -108,32 +108,32 @@ public class ActividadAddCita extends AppCompatActivity {
 
 
                     if(TextUtils.isEmpty(telefono)){
-                        editTextTelefono.setError(getString( R.string.error_campo_obligatorio));
+                        editTextTelefono.setError(getString(R.string.error_campo_obligatorio));
                         editTextTelefono.requestFocus();
                         return;
                     }
 
                     Pattern pattern = Patterns.PHONE;
                     if(!pattern.matcher(editTextTelefono.getText().toString()).matches()){
-                        editTextTelefono.setError(getString( R.string.error_longitudtlf));
+                        editTextTelefono.setError(getString(R.string.error_longitudtlf));
                         return;
                     }
 
 
                     if(TextUtils.isEmpty(email)){
-                        editTextEmail.setError(getString( R.string.error_campo_obligatorio));
+                        editTextEmail.setError(getString(R.string.error_campo_obligatorio));
                         editTextEmail.requestFocus();
                         return;
                     }
 
                     Pattern pattern1 = Patterns.EMAIL_ADDRESS;
                     if(!pattern1.matcher(editTextEmail.getText().toString()).matches()){
-                        editTextEmail.setError(getString( R.string.error_invalid_email));
+                        editTextEmail.setError(getString(R.string.error_invalid_email));
                         return;
                     }
 
 
-                    Toast.makeText(getApplicationContext(), R.string.mensaje1,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),R.string.mensaje1,Toast.LENGTH_SHORT).show();
                     d=true;
 
                 }while(d!=true);
@@ -146,7 +146,7 @@ public class ActividadAddCita extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), R.string.mensaje5,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.mensaje5,Toast.LENGTH_SHORT).show();
                 Intent intent1=new Intent(getApplicationContext(),ActividadNavigator.class);
                 startActivity(intent1);
             }
@@ -156,7 +156,7 @@ public class ActividadAddCita extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate( R.menu.menu_actividad_principal, menu);
+        getMenuInflater().inflate(R.menu.menu_actividad_principal, menu);
         return true;
     }
 
@@ -177,7 +177,7 @@ public class ActividadAddCita extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.action_quit:
-                Toast.makeText(getApplicationContext(), R.string.cierre_app,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.cierre_app,Toast.LENGTH_SHORT).show();
                 finish();
                 Intent intent1 = new Intent(Intent.ACTION_MAIN);
                 intent1.addCategory(Intent.CATEGORY_HOME);

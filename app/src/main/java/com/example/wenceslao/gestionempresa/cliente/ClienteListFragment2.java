@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
 import com.example.wenceslao.gestionempresa.R;
+import com.example.wenceslao.gestionempresa.constantes.G;
 import com.example.wenceslao.gestionempresa.constantes.Utilidades;
 import com.example.wenceslao.gestionempresa.proveedor.ClienteProveedor;
 import com.example.wenceslao.gestionempresa.proveedor.ContratoCliente;
@@ -96,7 +97,7 @@ public class ClienteListFragment2 extends ListFragment
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 		//Log.i(LOGTAG, "onCreateView");
-		View v = inflater.inflate( R.layout.fragment_cliente_list, container, false);
+		View v = inflater.inflate(R.layout.fragment_cliente_list, container, false);
 
 		mAdapter = new ClienteCursorAdapter(getActivity());
 		setListAdapter(mAdapter);
@@ -133,7 +134,7 @@ public class ClienteListFragment2 extends ListFragment
 		public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
 			//debe aparecer menu contextual
 			MenuInflater inflater= actionMode.getMenuInflater();
-			inflater.inflate( R.menu.menu_contextual,menu);
+			inflater.inflate(R.menu.menu_contextual,menu);
 			return true;
 		}
 
@@ -222,20 +223,20 @@ public class ClienteListFragment2 extends ListFragment
 			String telefono = cursor.getString(cursor.getColumnIndex(ContratoCliente.Cliente.TELEFONO));
 
 	
-			TextView textviewNombre = (TextView) view.findViewById( R.id.textview_cliente_list_item_nombre );
+			TextView textviewNombre = (TextView) view.findViewById(R.id.textview_cliente_list_item_nombre );
 			textviewNombre.setText(nombre);
 
-			TextView textviewApellidos = (TextView) view.findViewById( R.id.textview_cliente_list_item_apellidos );
+			TextView textviewApellidos = (TextView) view.findViewById(R.id.textview_cliente_list_item_apellidos );
 			textviewApellidos.setText(apellido);
 
-			TextView textViewEmail = (TextView) view.findViewById( R.id.textview_cliente_list_item_email );
+			TextView textViewEmail = (TextView) view.findViewById(R.id.textview_cliente_list_item_email );
 			textViewEmail.setText(email);
 
-			TextView textViewTelefono = (TextView) view.findViewById( R.id.textview_cliente_list_item_telefono );
+			TextView textViewTelefono = (TextView) view.findViewById(R.id.textview_cliente_list_item_telefono );
 			textViewTelefono.setText(telefono);
 
 			//poner la imagen
-			ImageView imagen_cliente = (ImageView) view.findViewById( R.id.image_cliente);
+			ImageView imagen_cliente = (ImageView) view.findViewById(R.id.image_cliente);
 			try {
 				Utilidades.loadImageFromStorage(getActivity(),"img_cliente"+ID+".jpg",imagen_cliente);
 			} catch (FileNotFoundException e) {
@@ -252,7 +253,7 @@ public class ClienteListFragment2 extends ListFragment
 		@Override
 		public View newView(Context context, Cursor cursor, ViewGroup parent) {
 			LayoutInflater inflater = LayoutInflater.from(context);
-			View v = inflater.inflate( R.layout.cliente_list_item, parent, false);
+			View v = inflater.inflate(R.layout.cliente_list_item, parent, false);
 			bindView(v, context, cursor);
 			return v;
 		}

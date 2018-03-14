@@ -19,14 +19,14 @@ import java.io.IOException;
 
 public class ClienteProveedor {
 
-    static public void insert(ContentResolver resolver, Cliente cliente, Context contexto){
-        Uri uri= ContratoCliente.Cliente.CONTENT_URI;
+    static public void insert(ContentResolver resolver, Cliente cliente,Context contexto){
+        Uri uri=ContratoCliente.Cliente.CONTENT_URI;
 
         ContentValues values=new ContentValues();
-        values.put( ContratoCliente.Cliente.NOMBRE,cliente.getNombre());
-        values.put( ContratoCliente.Cliente.APELLIDOS,cliente.getApellidos());
-        values.put( ContratoCliente.Cliente.EMAIL,cliente.getEmail());
-        values.put( ContratoCliente.Cliente.TELEFONO,cliente.getTelefono());
+        values.put(ContratoCliente.Cliente.NOMBRE,cliente.getNombre());
+        values.put(ContratoCliente.Cliente.APELLIDOS,cliente.getApellidos());
+        values.put(ContratoCliente.Cliente.EMAIL,cliente.getEmail());
+        values.put(ContratoCliente.Cliente.TELEFONO,cliente.getTelefono());
 
         //para llamar al proveedor de contenidos
         Uri uriResultado=resolver.insert(uri,values);
@@ -49,7 +49,7 @@ public class ClienteProveedor {
                 if(estado.equals( Environment.MEDIA_MOUNTED)){
                     sdDisponible=true;
                     sdAccesoEscritura=true;
-                    exitome= Utilidades.guardarMemoriaExterna(cliente.getImagen(),contexto,"img_cliente"+clienteid+".jpg",resolver);
+                    exitome=Utilidades.guardarMemoriaExterna(cliente.getImagen(),contexto,"img_cliente"+clienteid+".jpg",resolver);
                     if(exitome){
                         Toast.makeText(contexto,"Imagen guardada con exito en MEMORIA EXTERNA", Toast.LENGTH_SHORT).show();
                     }else{
@@ -74,23 +74,23 @@ public class ClienteProveedor {
     }
 
     static public void delete(ContentResolver resolver,int clienteId){
-        Uri uri=Uri.parse( ContratoCliente.Cliente.CONTENT_URI + "/" + clienteId);
+        Uri uri=Uri.parse(ContratoCliente.Cliente.CONTENT_URI + "/" + clienteId);
         //resolver.delete(uri,null,null);
-        resolver.delete(uri, ContratoCliente.Cliente._ID+"="+clienteId,null);
+        resolver.delete(uri,ContratoCliente.Cliente._ID+"="+clienteId,null);
 
     }
 
-    static public void update(ContentResolver resolver, Cliente cliente, Context contexto){
-        Uri uri=Uri.parse( ContratoCliente.Cliente.CONTENT_URI + "/" + cliente.getID());
+    static public void update(ContentResolver resolver,Cliente cliente, Context contexto){
+        Uri uri=Uri.parse(ContratoCliente.Cliente.CONTENT_URI + "/" + cliente.getID());
 
         ContentValues values=new ContentValues();
-        values.put( ContratoCliente.Cliente.NOMBRE,cliente.getNombre());
-        values.put( ContratoCliente.Cliente.APELLIDOS,cliente.getApellidos());
-        values.put( ContratoCliente.Cliente.EMAIL,cliente.getEmail());
-        values.put( ContratoCliente.Cliente.TELEFONO,cliente.getTelefono());
+        values.put(ContratoCliente.Cliente.NOMBRE,cliente.getNombre());
+        values.put(ContratoCliente.Cliente.APELLIDOS,cliente.getApellidos());
+        values.put(ContratoCliente.Cliente.EMAIL,cliente.getEmail());
+        values.put(ContratoCliente.Cliente.TELEFONO,cliente.getTelefono());
 
         //resolver.update(uri,values,null,null);
-        resolver.update(uri,values, ContratoCliente.Cliente._ID+"="+cliente.getID(),null);
+        resolver.update(uri,values,ContratoCliente.Cliente._ID+"="+cliente.getID(),null);
 
         //guardar la imagen
         if(cliente.getImagen()!=null){
@@ -108,7 +108,7 @@ public class ClienteProveedor {
                 if(estado.equals( Environment.MEDIA_MOUNTED)){
                     sdDisponible=true;
                     sdAccesoEscritura=true;
-                    exitome= Utilidades.guardarMemoriaExterna(cliente.getImagen(),contexto,"img_cliente"+cliente.getID()+".jpg",resolver);
+                    exitome=Utilidades.guardarMemoriaExterna(cliente.getImagen(),contexto,"img_cliente"+cliente.getID()+".jpg",resolver);
                     if(exitome){
                         Toast.makeText(contexto,"Imagen guardada con exito en MEMORIA EXTERNA", Toast.LENGTH_SHORT).show();
                     }else{
@@ -134,7 +134,7 @@ public class ClienteProveedor {
     }
 
     static public Cliente readRecord(ContentResolver resolver, int clienteId){
-        Uri uri=Uri.parse( ContratoCliente.Cliente.CONTENT_URI + "/" + clienteId);
+        Uri uri=Uri.parse(ContratoCliente.Cliente.CONTENT_URI + "/" + clienteId);
         
         String[] projection={
                 ContratoCliente.Cliente.NOMBRE,
@@ -143,16 +143,16 @@ public class ClienteProveedor {
                 ContratoCliente.Cliente.TELEFONO
         };
 
-        Cursor cursor=resolver.query(uri,projection, ContratoCliente.Cliente._ID+"="+clienteId,null,null);
+        Cursor cursor=resolver.query(uri,projection,ContratoCliente.Cliente._ID+"="+clienteId,null,null);
         
         if(cursor.moveToFirst()){
             Cliente cliente=new Cliente();
             
             cliente.setID(clienteId);
-            cliente.setNombre(cursor.getString(cursor.getColumnIndex( ContratoCliente.Cliente.NOMBRE)));
-            cliente.setApellidos(cursor.getString(cursor.getColumnIndex( ContratoCliente.Cliente.APELLIDOS)));
-            cliente.setEmail(cursor.getString(cursor.getColumnIndex( ContratoCliente.Cliente.EMAIL)));
-            cliente.setTelefono(cursor.getString(cursor.getColumnIndex( ContratoCliente.Cliente.TELEFONO)));
+            cliente.setNombre(cursor.getString(cursor.getColumnIndex(ContratoCliente.Cliente.NOMBRE)));
+            cliente.setApellidos(cursor.getString(cursor.getColumnIndex(ContratoCliente.Cliente.APELLIDOS)));
+            cliente.setEmail(cursor.getString(cursor.getColumnIndex(ContratoCliente.Cliente.EMAIL)));
+            cliente.setTelefono(cursor.getString(cursor.getColumnIndex(ContratoCliente.Cliente.TELEFONO)));
             
             return cliente;
             

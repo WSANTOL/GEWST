@@ -17,7 +17,7 @@ public class ActividadEmpleado extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.actividad_empleado);
 
-        Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Create the adapter that will return a fragment for each of the three
@@ -26,11 +26,11 @@ public class ActividadEmpleado extends AppCompatActivity {
         EmpleadoListFragment empleadoListFragment = new EmpleadoListFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add( R.id.fragment_empleado, empleadoListFragment);
+        transaction.add(R.id.fragment_empleado, empleadoListFragment);
         transaction.commit();
 
         //Funcionalidad del Floating Button
-        FloatingActionButton fab=(FloatingActionButton) findViewById( R.id.fab);
+        FloatingActionButton fab=(FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

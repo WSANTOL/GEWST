@@ -33,15 +33,15 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_empleado_detalle);
+        setContentView(R.layout.activity_empleado_detalle);
 
-        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById( R.id.toolbar_detalle_activity_2);
+        android.support.v7.widget.Toolbar toolbar=(android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_detalle_activity_2);
         setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        imageViewEmpleado=(ImageView) findViewById( R.id.image_view_empleado);
+        imageViewEmpleado=(ImageView) findViewById(R.id.image_view_empleado);
 
-        ImageButton imageButtonCamara=(ImageButton) findViewById( R.id.image_button_camara_empleado);
+        ImageButton imageButtonCamara=(ImageButton) findViewById(R.id.image_button_camara_empleado);
         imageButtonCamara.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -49,7 +49,7 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
             }
         });
 
-        ImageButton imageButtonGaleria=(ImageButton) findViewById( R.id.image_button_galeria_empleado);
+        ImageButton imageButtonGaleria=(ImageButton) findViewById(R.id.image_button_galeria_empleado);
         imageButtonGaleria.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -101,7 +101,7 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuItem menuItem=menu.add(Menu.NONE, G.GUARDAR,Menu.NONE,"Guardar");
-        menuItem.setIcon( R.drawable.ic_action_guardar);
+        menuItem.setIcon(R.drawable.ic_action_guardar);
         menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
 
         return super.onCreateOptionsMenu(menu);
@@ -118,10 +118,10 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
     }
 
     void attemptGuardar(){
-        EditText editTextEmpleadoNombre=(EditText) findViewById( R.id.editTextEmpleadoNombre);
-        EditText editTextEmpleadoFormacion=(EditText) findViewById( R.id.editTextEmpleadoFormacion);
-        EditText editTextEmpleadoEmail=(EditText) findViewById( R.id.editTextEmpleadoEmail);
-        EditText editTextEmpleadoTelefono=(EditText) findViewById( R.id.editTextEmpleadoTelefono);
+        EditText editTextEmpleadoNombre=(EditText) findViewById(R.id.editTextEmpleadoNombre);
+        EditText editTextEmpleadoFormacion=(EditText) findViewById(R.id.editTextEmpleadoFormacion);
+        EditText editTextEmpleadoEmail=(EditText) findViewById(R.id.editTextEmpleadoEmail);
+        EditText editTextEmpleadoTelefono=(EditText) findViewById(R.id.editTextEmpleadoTelefono);
 
 
         editTextEmpleadoNombre.setError(null);
@@ -135,44 +135,44 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
         String telefono=editTextEmpleadoTelefono.getText().toString();
 
         if(TextUtils.isEmpty(nombre)){
-            editTextEmpleadoNombre.setError(getString( R.string.error_campo_obligatorio));
+            editTextEmpleadoNombre.setError(getString(R.string.error_campo_obligatorio));
             editTextEmpleadoNombre.requestFocus();
             return;
         }
 
         Pattern patron = Pattern.compile("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+$");
         if (!patron.matcher(nombre).matches() || nombre.length() > 20) {
-            editTextEmpleadoNombre.setError(getString( R.string.error_nombre_2));
+            editTextEmpleadoNombre.setError(getString(R.string.error_nombre_2));
             editTextEmpleadoNombre.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(formacion)){
-            editTextEmpleadoFormacion.setError(getString( R.string.error_campo_obligatorio));
+            editTextEmpleadoFormacion.setError(getString(R.string.error_campo_obligatorio));
             editTextEmpleadoFormacion.requestFocus();
             return;
         }
 
         if (!patron.matcher(formacion).matches() || formacion.length() > 20) {
-            editTextEmpleadoFormacion.setError(getString( R.string.error_nombre_2));
+            editTextEmpleadoFormacion.setError(getString(R.string.error_nombre_2));
             editTextEmpleadoFormacion.requestFocus();
             return;
         }
 
         if(TextUtils.isEmpty(email)){
-            editTextEmpleadoEmail.setError(getString( R.string.error_campo_obligatorio));
+            editTextEmpleadoEmail.setError(getString(R.string.error_campo_obligatorio));
             editTextEmpleadoEmail.requestFocus();
             return;
         }
 
         Pattern pattern1 = Patterns.EMAIL_ADDRESS;
         if(!pattern1.matcher(editTextEmpleadoEmail.getText().toString()).matches()){
-            editTextEmpleadoEmail.setError(getString( R.string.error_invalid_email));
+            editTextEmpleadoEmail.setError(getString(R.string.error_invalid_email));
             return;
         }
 
         if(TextUtils.isEmpty(telefono)){
-            editTextEmpleadoTelefono.setError(getString( R.string.error_campo_obligatorio));
+            editTextEmpleadoTelefono.setError(getString(R.string.error_campo_obligatorio));
             editTextEmpleadoTelefono.requestFocus();
             return;
         }
@@ -180,13 +180,13 @@ public class EmpleadoInsertarActivity2 extends AppCompatActivity {
 
         Pattern pattern = Patterns.PHONE;
         if(!pattern.matcher(editTextEmpleadoTelefono.getText().toString()).matches()){
-            editTextEmpleadoTelefono.setError(getString( R.string.error_longitudtlf));
+            editTextEmpleadoTelefono.setError(getString(R.string.error_longitudtlf));
             return;
         }
 
 
 
-        Empleado empleado=new Empleado( G.SIN_VALOR_INT,nombre,formacion,email,telefono,foto);
+        Empleado empleado=new Empleado(G.SIN_VALOR_INT,nombre,formacion,email,telefono,foto);
         EmpleadoProveedor.insert(getContentResolver(),empleado,this);
         finish();
 
